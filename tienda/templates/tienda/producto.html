@@ -1,0 +1,17 @@
+{% extends "tienda/main.html" %}
+{% load static %}
+{% block title %} StickerON|{{producto.nombre}} {% endblock %}
+
+{% block content %}
+<div class="jumbotron">
+    <img class="container-fluid" src="{{producto.imagenURL}}" height="450px">    
+    <hr class="my-4">
+    <h2><strong>{{producto.nombre}}</strong></h2>
+    <h2>Precio: ${{producto.precio|floatformat:2}}</h3>
+    <form action="{% url 'agregar' producto.id %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-warning btn-lg btn-block" href="#" role="button"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
+        <a class="btn btn-success btn-lg btn-block" href="{% url 'tienda' %}" role="button"><i class="fas fa-store"></i> Volver a la tienda</a>
+    </form>
+    </div>
+{% endblock content %}

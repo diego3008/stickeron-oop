@@ -1,0 +1,18 @@
+autopep8 @ file:///tmp/build/80754af9/autopep8_1596578164842/work
+certifi==2020.6.20
+chardet==3.0.4
+Django==2.2.16
+gunicorn==20.0.4
+idna==2.10
+mysqlclient==2.0.1
+Pillow==7.2.0
+psycopg2==2.8.6
+pycodestyle==2.6.0
+pytz==2020.1
+requests==2.25.0
+simplejson==3.17.2
+sqlparse==0.4.1
+stripe==2.55.0
+toml @ file:///tmp/build/80754af9/toml_1592853716807/work
+urllib3==1.26.2
+whitenoise==5.2.0

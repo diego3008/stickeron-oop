@@ -1,0 +1,30 @@
+{% extends "tienda/main.html" %}
+{% load static %}
+
+{% block title %} StickerON|Tienda {% endblock %}
+
+{% block content %}
+	
+    <div class="row">
+		{% for producto in productos %}
+        <div class="col-lg-4">
+			<img class="thumbnail" src="{{producto.imagenURL}}">
+			<div class="box-element product">
+				<h6><strong>{{producto.nombre}}</strong></h6>
+				<hr>
+
+				<form action="{% url 'producto' producto.id %}" method="get" class="d-inline">
+					{% csrf_token %}
+					<button type="submit" class="btn btn-success" href=""><i class="fas fa-eye"></i> Ver detalles</button>
+				</form>
+				<form action="{% url 'agregar' producto.id%}" method="post" class="d-inline">
+					{% csrf_token %}
+					<button type="submit" class="btn btn-warning" href=""><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
+				</form>
+				<h4 style="display: inline-block;"><strong>Precio: ${{producto.precio|floatformat:2}}</strong></h4>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+
+{% endblock content %}

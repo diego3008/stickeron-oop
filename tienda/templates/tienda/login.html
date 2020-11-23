@@ -1,0 +1,14 @@
+{% extends "tienda/main.html" %}
+{% load static %}
+{% block title %} StickerON|Login {% endblock %}
+{% block content %}
+<h2>Iniciar sesión</h2>
+<form method="post">
+    {{ form.as_p }}
+    {% csrf_token %}
+    <button type="submit">Login</button>
+</form>
+
+<hr />
+<a href="{% url 'register' %}">Registrar usuario</a>
+{% endblock content %}
