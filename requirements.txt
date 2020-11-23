@@ -12,6 +12,5 @@ requests==2.25.0
 simplejson==3.17.2
 sqlparse==0.4.1
 stripe==2.55.0
-toml @ file:///tmp/build/80754af9/toml_1592853716807/work
 urllib3==1.26.2
 whitenoise==5.2.0
