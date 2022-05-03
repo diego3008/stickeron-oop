@@ -58,6 +58,51 @@ def checkout(request):
     contexto = {'articulos': articulos, 'pedido': pedido, 'articulosCarrito': articulosCarrito}
     return render(request, 'tienda/checkout.html', contexto)
 
+def audio(request):
+    if request.user.is_authenticated:
+        comprador = request.user.comprador
+        pedido, creado = Pedido.objects.get_or_create(
+        comprador=comprador, completado=False)
+        articulosCarrito = pedido.calcular_articulos_carrito
+    else:
+        articulos = []
+        pedido = {'calcular_total_carrito': 0, 'calcular_articulos_carrito': 0}
+        articulosCarrito = pedido['calcular_articulos_carrito']
+    
+    productos = Producto.objects.all()
+    contexto = {'productos': productos, 'articulosCarrito': articulosCarrito}
+    return render(request, 'tienda/audio.html', contexto)
+
+def iluminacion(request):
+    if request.user.is_authenticated:
+        comprador = request.user.comprador
+        pedido, creado = Pedido.objects.get_or_create(
+        comprador=comprador, completado=False)
+        articulosCarrito = pedido.calcular_articulos_carrito
+    else:
+        articulos = []
+        pedido = {'calcular_total_carrito': 0, 'calcular_articulos_carrito': 0}
+        articulosCarrito = pedido['calcular_articulos_carrito']
+    
+    productos = Producto.objects.all()
+    contexto = {'productos': productos, 'articulosCarrito': articulosCarrito}
+    return render(request, 'tienda/iluminacion.html', contexto)
+
+def auto(request):
+    if request.user.is_authenticated:
+        comprador = request.user.comprador
+        pedido, creado = Pedido.objects.get_or_create(
+        comprador=comprador, completado=False)
+        articulosCarrito = pedido.calcular_articulos_carrito
+    else:
+        articulos = []
+        pedido = {'calcular_total_carrito': 0, 'calcular_articulos_carrito': 0}
+        articulosCarrito = pedido['calcular_articulos_carrito']
+    
+    productos = Producto.objects.all()
+    contexto = {'productos': productos, 'articulosCarrito': articulosCarrito}
+    return render(request, 'tienda/auto.html', contexto)
+
 def eliminar_articulo(request, id):
     articulo = ArticuloPedido.objects.get(pk=id)
     articulo.delete()

@@ -14,6 +14,9 @@ urlpatterns = [
     path('logout/', views.logout, name='logout'),
     path('register/', views.register, name='register'),
     path('tarjeta/', views.tarjeta, name='tarjeta'),
-    path('confirmacion/', views.confirmacion, name='confirmacion')
+    path('confirmacion/', views.confirmacion, name='confirmacion'),
+    path('iluminacion/', views.iluminacion, name='iluminacion'),
+    path('auto/', views.auto, name='auto'),
+    path('audio/', views.audio, name='audio')
     
 ]

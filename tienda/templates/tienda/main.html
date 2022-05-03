@@ -15,7 +15,6 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <span class="navbar-brand mb-0 h1">TOP Audio</span>
-    <span class="navbar-brand mb-0 h1">TOP Audio</span>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -36,9 +35,9 @@
             Categorías
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Audio</a>
-            <a class="dropdown-item" href="#">Iluminación</a>
-            <a class="dropdown-item" href="#">Auto</a>
+            <a class="dropdown-item" href="{% url 'audio' %}">Audio</a>
+            <a class="dropdown-item" href="{% url 'iluminacion' %}">Iluminación</a>
+            <a class="dropdown-item" href="{% url 'auto' %}">Estéreos</a>
           </div>
         </li>
       </ul>

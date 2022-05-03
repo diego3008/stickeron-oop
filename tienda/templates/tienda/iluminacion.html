@@ -4,12 +4,14 @@
 {% block title %} TOP Audio|Tienda {% endblock %}
 
 {% block content %}
+	<h1>Equipo de iluminacion</h1>
     <div class="row">
 		{% for producto in productos %}
+			{% if producto.id > 26 %}
 				<div class="col-lg-4">
 					<img class="thumbnail" src="{{producto.imagenURL}}">
 					<div class="box-element product">
-						<h6><strong>{{producto.nombre}} {{producto.id}}</strong></h6>
+						<h6><strong>{{producto.nombre}}</strong></h6>
 						<hr>
 		
 						<form action="{% url 'producto' producto.id %}" method="get" class="d-inline">
@@ -23,6 +25,7 @@
 						<h4 style="display: inline-block;"><strong>Precio: ${{producto.precio|floatformat:2}}</strong></h4>
 					</div>
 				</div>
+            {%endif%}
 		{% endfor %}
 	</div>
 
